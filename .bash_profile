@@ -4,12 +4,20 @@ export PATH=$PATH:$HOME/tools/
 export PATH=$PATH:$HOME/xgit/
 export PATH=$PATH:$HOME/xgit/scripts/
 export PATH=$PATH:$HOME/scripts/
-export PATH=$PATH:$HOME/Library/Python/2.7/bin 
-
 
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
+PATH="/usr/local/bin:$PATH"
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # Prompt
 if [ $HOSTNAME = "muc.local" ] ; then
@@ -23,11 +31,6 @@ function hash-all
 {
   find . -type d -print -mindepth 1 -maxdepth 1 -exec git -C {} rev-parse HEAD \; -exec git -C {} branch\;
 }
-export PATH="/usr/local/opt/qt/bin:$PATH"
-
-export PATH="/usr/local/opt/bison/bin/bison:$PATH"
-export PATH="/usr/local/opt/bison/bin:$PATH"
-export PATH="/usr/local/opt/bison/bin:$PATH"
 
 function git_branches()
 {
