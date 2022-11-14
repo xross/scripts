@@ -19,12 +19,33 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+function virtualenv_info(){
+    # Get Virtual Env
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Strip out the path and just leave the env name
+        venv="${VIRTUAL_ENV##*/}"
+    else
+        # In case you don't have one activated
+        venv=''
+    fi
+    [[ -n "$venv" ]] && echo "($venv) "
+}
+
+# disable the default virtualenv prompt change
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+VENV="\$(virtualenv_info)";
+
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # Prompt
-if [ $HOSTNAME = "muc.local" ] ; then
-    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[$txtgrn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\n\$ "
+if [ $HOSTNAME = "LT-000905.local" ] ; then
+
+    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[32m\]\\h \[\e[33m\]\w\[\e[0m\]\[$txtred\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtcyn\] ${VENV}\[$txtrst\]\n\$ "
 else
     #PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[31m\]\h\[\e[0m\] \[\e[33m\]\w\[\e[0m\]\n\$ "
-    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\] \[$txtred\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\n\$ "
+    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[31m\]\\h \[\e[33m\]\w\[\e[0m\] \[$txtred\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 fi
 
 function hash-all
