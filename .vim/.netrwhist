@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/ross/tmp'
+let g:netrw_dirhist_9='/Users/ross/sandboxes/sb_uac/sw_usb_audio'
+let g:netrw_dirhist_8='/Users/ross/sandboxes/sb_uac'
+let g:netrw_dirhist_7='/Users/ross/sandboxes/sb_uac/sw_usb_audio'
+let g:netrw_dirhist_6='/Users/ross/sandboxes/sb_uac/tools_xpd_orig'
+let g:netrw_dirhist_5='/Users/ross/sandboxes/sb_uac/lib_adat'
+let g:netrw_dirhist_4='/Users/ross/sandboxes/sb_uac/lib_spdif/.github'
+let g:netrw_dirhist_3='/Users/ross/sandboxes/sb_uac/lib_xua'
+let g:netrw_dirhist_2='/Users/ross/sandboxes/sb_uac/sw_usb_audio/app_usb_aud_xk_216_mc/.build_1AMi2o2xxxxxx/fake_inc'
+let g:netrw_dirhist_1='/Users/ross/sandboxes/sb_uac/sw_usb_audio/app_usb_aud_xk_316_mc'
