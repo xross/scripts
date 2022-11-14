@@ -7,7 +7,7 @@ export PATH=$PATH:$HOME/scripts/
 export PATH=$PATH:$HOME/Library/Python/2.7/bin 
 
 
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
+export GITAWAREPROMPT=~/scripts/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
 
