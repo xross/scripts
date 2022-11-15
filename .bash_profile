@@ -36,7 +36,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 VENV="\$(virtualenv_info)";
 
-
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Prompt
@@ -73,4 +72,12 @@ function git_branches()
             echo "$sub [$(cd "$sub"; git  branch | grep '^\*' | cut -d' ' -f2)]"
         done
     )
+}
+
+h2d() {
+    printf "%d" $1
+}
+
+d2h() {
+    printf "0x%x" $1
 }
