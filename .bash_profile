@@ -40,12 +40,12 @@ VENV="\$(virtualenv_info)";
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Prompt
-if [ $HOSTNAME = "LT-000905.local" ] || [ $HOSTHAME = "muc.local" ]; then
-
+if [ $HOSTNAME = "LT-000905.local" ]; then
+    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[32m\]\\h \[\e[33m\]\w\[\e[0m\]\[$txtred\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtcyn\] ${VENV}\[$txtrst\]\n\$ "
+elif [ $HOSTNAME = "muc.local" ]; then
     PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[32m\]\\h \[\e[33m\]\w\[\e[0m\]\[$txtred\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtcyn\] ${VENV}\[$txtrst\]\n\$ "
 else
-    #PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[31m\]\h\[\e[0m\] \[\e[33m\]\w\[\e[0m\]\n\$ "
-    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[31m\]\\h \[\e[33m\]\w\[\e[0m\] \[$txtred\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+    PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\[\e[31m\]\\h \[\e[33m\]\w\[\e[0m\]\[$txtred\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\[$txtcyn\] ${VENV}\[$txtrst\]\n\$ "
 fi
 
 function hash-all
